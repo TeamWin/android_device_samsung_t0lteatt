@@ -54,6 +54,25 @@ on property:adb.recovery=1
     write /sys/class/android_usb/android0/iSerial $ro.serialno
     start adbd
 
+on property:sys.usb.config=none
+	stop adbd
+	write /sys/class/android_usb/android0/enable 0
+	write /sys/class/android_usb/android0/bDeviceClass 0
+
+on property:sys.usb.config=mtp,adb
+	stop adbd
+	write /sys/class/android_usb/android0/enable 0
+	write /sys/class/android_usb/android0/functions mtp,adb
+	write /sys/class/android_usb/android0/enable 1
+	start adbd
+
+on property:sys.usb.config=adb
+	stop adbd
+	write /sys/class/android_usb/android0/enable 0
+	write /sys/class/android_usb/android0/functions adb
+	write /sys/class/android_usb/android0/enable ${service.adb.root}
+	start adbd
+
 # Restart adbd so it can run as root
 on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
