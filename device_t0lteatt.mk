@@ -25,12 +25,10 @@ PRODUCT_COPY_FILES += \
         device/samsung/t0lteatt/recovery/encryption/libkeyutils.so:root/sbin/libkeyutils.so \
         device/samsung/t0lteatt/recovery/encryption/libsec_ecryptfs.so:root/sbin/libsec_ecryptfs.so \
         device/samsung/t0lteatt/recovery/encryption/libsec_km.so:root/sbin/libsec_km.so \
-		device/samsung/t0lteatt/recovery/init.recovery.smdk4x12.rc:root/init.recovery.smdk4x12.rc \
-		device/samsung/t0lteatt/recovery/runatboot.sh:root/sbin/runatboot.sh
+	device/samsung/t0lteatt/recovery/init.recovery.smdk4x12.rc:root/init.recovery.smdk4x12.rc \
+	device/samsung/t0lteatt/recovery/runatboot.sh:root/sbin/runatboot.sh
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_PACKAGES += external/valgrind
-
-PRODUCT_NAME := cm_t0lteatt
+PRODUCT_NAME := omni_t0lteatt
 PRODUCT_BRAND := Samsung

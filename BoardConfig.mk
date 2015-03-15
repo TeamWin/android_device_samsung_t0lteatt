@@ -77,7 +77,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Recovery: set depending on recovery being built for. (CWM or TWRP)
 #           both init scripts can be found in the recovery folder
-TARGET_RECOVERY_INITRC := device/samsung/t0lteatt/recovery/init.rc
+#TARGET_RECOVERY_INITRC := device/samsung/t0lteatt/recovery/init.rc
 HAVE_SELINUX := true
 
 # TWRP specific build flags
